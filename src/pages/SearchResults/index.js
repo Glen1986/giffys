@@ -12,7 +12,10 @@ const {loading, gifs} = useGifs({keyword})
 return<>
       {loading
        ? <Spiner/>
-       : <ListOfGifs gifs={gifs}/>
+       :<> 
+          <h3 className="App-title"> {decodeURI(keyword)}</h3>
+          <ListOfGifs gifs={gifs}/>
+       </>
       }
    </>
  }

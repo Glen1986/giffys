@@ -2,6 +2,7 @@ import { Link, useLocation } from 'wouter'
 import ListOfGifs from '../../components/ListOfGifs'
 import { useState } from 'react'
 import { useGifs } from '../../hooks/useGifs'
+import TrendingSearches from '../../components/TrendingSearches'
 
 
 export default function Home () {
@@ -27,6 +28,7 @@ return(
 			</form>
 				<h3>ulima Busqeda</h3>
 			<ListOfGifs gifs={gifs}/>
+			<TrendingSearches/>
 		</>
 	)
 }
