@@ -5,10 +5,15 @@
   column-count: var(--results-columns);
   column-gap: .5em;
   margin: 2rem;
+  max-width: 70%;
+  justify-content: flex-start;
+  align-items: left;
+  position: relative;
+  min-width: 100vh;
 }
 .ListOfGifs-item{
   width: 100%;
-  -webkit-column-break-inside: avoid;
+  --webkit-column-break-inside: avoid;
   page-break-inside: avoid;
   break-inside: avoid;
   display: inline-block;
