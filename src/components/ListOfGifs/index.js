@@ -1,10 +1,13 @@
 import React from 'react'
 import Gif from '../Gif/index'
+import Spiner from '../Spiner'
+import './styles.css'
 
-export default function ListOfGifs({gifs}){
+export default function ListOfGifs({gifs, loading}){
 return <div className='ListOfGifs'>
-  {
-      gifs.map(({title, id, url}) =>
+  {loading
+  ? <Spiner/>
+  : gifs.map(({title, id, url}) =>
         <Gif 
           title={title}
           id={id} 
