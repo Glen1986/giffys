@@ -17,3 +17,21 @@ h4{
   top: -32px;
   right:6px;
 }
+@media (min-width: 600px){
+  img{
+    max-width: 36vw;
+    margin: 0 auto;
+  } 
+}
+@media (min-width: 800px){
+  img{
+    max-width: 26vw;
+    margin: 0 auto;
+  } 
+}
+@media (max-width: 600px){
+  img{
+    max-width: 95vw;
+    margin: 0 auto;
+  } 
+}
