@@ -1,12 +1,9 @@
-/*
+
 .Category{
   max-width: 15%;
-  position: absolute;
-  left: 80%;
-  flex-direction: column;
-  text-align: left;
+  display: grid;
 }
-*/
+
 .Category-title {
   color: var(--theme-body-txt);
   font-weight: bold;
@@ -42,7 +39,6 @@
 @media screen and (min-width: 55rem) {
   .Category-title{
     text-align: left;
-    margin-left: 2rem;
   }
   .Category-list {
     justify-content: flex-start;

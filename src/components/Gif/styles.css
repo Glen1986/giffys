@@ -17,3 +17,9 @@ h4{
   top: -32px;
   right:6px;
 }
+@media (max-width: 600px){
+  img{
+    max-width: 95vw;
+    margin: 0 auto;
+  } 
+}
