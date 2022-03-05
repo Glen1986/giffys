@@ -1,33 +1,33 @@
 
-import React from 'react'
+import React, {useRef, useCallback, useEffect} from 'react'
 import ListOfGifs from 'components/ListOfGifs'
 import Spiner from 'components/Spiner'
 import { useGifs } from 'hooks/useGifs';
-//import useNearScreen from 'hooks/useNearScreen';
-//import debounce from 'just-debounce-it';
+import useNearScreen from 'hooks/useNearScreen';
+import debounce from 'just-debounce-it';
 
 export default function SearchResults({params}){
 const { keyword } = params
 const {loading, gifs, setPage} = useGifs({keyword})
-//const externalRef = useRef()
-/*const {isNearScreen} = useNearScreen({
+const externalRef = useRef()
+const {isNearScreen } = useNearScreen({
    externalRef: loading 
               ? null 
               : externalRef, 
           once: false})
-*/
-const handleNextPage = () => setPage(prevPage => prevPage + 1)
+console.log(isNearScreen)
+//const handleNextPage = () => setPage(prevPage => prevPage + 1)
 //const handleNextPage = () => console.log('nextPage')
-/*
+
 const debounceHandleNextPage = useCallback(debounce(
-   ()=>  setPage(prevPage => prevPage + 1), 200
+   ()=> setPage(prevPage => prevPage + 1), 200
   ),[setPage])
 
 useEffect(()=>{
 console.log(isNearScreen)
 if(isNearScreen) debounceHandleNextPage()
 }, [debounceHandleNextPage, isNearScreen])
-*/
+
 return<>
       {loading
        ? <Spiner/>
@@ -36,7 +36,6 @@ return<>
           <ListOfGifs gifs={gifs}/>
        </>
       }
-    <br/>
-    <button onClick={handleNextPage}>next Page</button>
+    <div ref = {externalRef}></div>
    </>
  }
