@@ -1,5 +1,5 @@
 import {API_URL, API_KEY} from './settings'
-const fromApiResponseToGifs = apiResponse =>{
+const fromApiResponseToGifs = apiResponse => {
   const {data} = apiResponse
   const {images, id, title} = data
   const {url} = images.downsized_medium
