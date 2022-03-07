@@ -20,21 +20,21 @@ const handleChange = (evt) => {
   setKeyword(evt.target.value)
 }
 return(
-		<>
-				<div className='App'>
-					<h3 className='App-title'>Gifs mas poplares</h3>
-					<form onSubmit={handleSubmit}>
-						<input type="text" value={keyword} onChange={handleChange} placeholder="buscar Gifs"/>
-						<input onSubmit={handleSubmit} type="submit" value="search"/>
-					</form>
-				<h3>ulima Busqeda</h3>
-				<div className='Application'>
-					<ListOfGifs gifs={gifs}/>
-					<div className='TrendinSearches'>
-						<TrendingSearches/>
-					</div>
+	<>
+	      <div className='App'>
+		      <h3 className='App-title'>Gifs mas populares</h3>
+		      <form onSubmit={handleSubmit}>
+			      <input type="text" value={keyword} onChange={handleChange} placeholder="buscar Gifs"/>
+			      <input onSubmit={handleSubmit} type="submit" value="search"/>
+		      </form>
+	      <title>ulima Busqeda</title>
+	      <div className='Application'>
+			<ListOfGifs gifs={gifs}/>
+				<div className='TrendinSearches'>
+					<TrendingSearches/>
 				</div>
 			</div>
-		</>
-	)
+		</div>
+	</>
+    )
 }
