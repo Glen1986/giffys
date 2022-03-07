@@ -1,16 +1,15 @@
 import React, {useContext, useEffect} from "react"
-//import GifsContext from "../../context/GifsContext"
 import Gif from "../../components/Gif"
-import useGlobalGifs from '../../hooks/useGlobalGifs'
+import useSingleGif from '../../hooks/useSingleGif'
 
 export default function Detail({params}){
-//const {gifs} = useContext(GifsContext)
-const gifs = useGlobalGifs()
+const {gif, isLoading, isError} = useSingleGif({id: params.id})
+  if(!gif) return null
 
-const gif = gifs.find(singleGif => singleGif.id === params.id)
-//useEffect(()=>{
-//const gifToUse = gif || localStorage.getItem('myGif')
-//console.log(gifToUse)
-//},[gif])
-return <Gif {...gif}/>
+  return(
+    <>
+	  <h3 className="App-title">{gif.title}</h3>
+	  <Gif {...gif}/>
+    </>
+    )
 }
