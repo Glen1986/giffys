@@ -16,8 +16,8 @@ const handleChange = (evt) => {
   return(
     <>
        <form onSubmit={handleSubmit}>
-	  <input type="text" value={keyword} onChange={handleChange} placeholder="buscar Gifs"/>
-	  <input onSubmit={handleSubmit} type="submit" value="search"/>
+        <input type="text" value={keyword} onChange={handleChange} placeholder="buscar Gifs"/>
+        <input onSubmit={handleSubmit} type="submit" value="search"/>
        </form>
     </>
   )
