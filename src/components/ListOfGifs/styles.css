@@ -30,16 +30,16 @@ button{
 }
 @media (min-width: 600px){
   :root{
-    --repeat-columns: repeat(2, 1fr)
+    --repeat-columns: repeat(2, 1fr);
   }
 }
 @media (min-width: 800px){
   :root{
-    --repeat-columns: repeat(3, 1fr)
+    --repeat-columns: repeat(3, 1fr);
   }
 }
 @media (min-width: 1200px){
   :root{
-    --repeat-columns: repeat(4, 1fr)
+    --repeat-columns: repeat(4, 1fr);
   }
 }
