@@ -1,15 +1,15 @@
 import Spiner from "components/Spiner"
-import useTitle from "hooks/useTitle"
+import useSEO from "hooks/useSEO"
 import React from "react"
 import {Redirect} from "wouter"
 import Gif from "../../components/Gif"
 import useSingleGif from '../../hooks/useSingleGif'
 
 export default function Detail({params}){
-const {gif, isLoading, isError} = useSingleGif({id: params.id})
-const title = gif ? gif.title : ''
+  const {gif, isLoading, isError} = useSingleGif({id: params.id})
+  const title = gif ? gif.title : ''
+  useSEO({description: `Detail of ${title}`, title})
 
-  useTitle({title})
   if(isLoading) return <Spiner/>
   if(isError) return <Redirect to='/404'/>
   if(!gif) return null
