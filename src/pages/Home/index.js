@@ -4,6 +4,7 @@ import SearchForm from 'components/SearchForm'
 import { useCallback } from 'react'
 import { useGifs } from 'hooks/useGifs'
 import TrendingSearches from 'components/TrendingSearches'
+import { Helmet } from 'react-helmet'
 //import useTitle from 'hooks/useTitle'
 
 
@@ -20,7 +21,10 @@ const handleSubmit = useCallback(({keyword}) => {
 //useTitle({title})
 
 return(
-	<>
+<>
+    <Helmet>
+			<title>Home | Giffy</title>
+		</Helmet>
 	  <div className='App'>
 	    <h3 className='App-title'>Gifs mas populares</h3>
 	    <SearchForm onSubmit = { handleSubmit }/>

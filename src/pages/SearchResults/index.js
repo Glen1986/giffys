@@ -5,6 +5,8 @@ import { useGifs } from 'hooks/useGifs';
 import useNearScreen from 'hooks/useNearScreen';
 import debounce from 'just-debounce-it';
 import useSEO from 'hooks/useSEO'
+import SearchForm from 'components/SearchForm'; 
+import {Helmet} from 'react-helmet'
 
 export default function SearchResults({params}){
 const { keyword } = params
@@ -21,7 +23,9 @@ useSEO({description: decodeURI(keyword), title})
 console.log(title)
 //const handleNextPage = () => setPage(prevPage => prevPage + 1)
 //const handleNextPage = () => console.log('nextPage')
-
+//          <header>
+//            <SearchForm onSubmit = {handleSubmitSearchForm}/>
+//         </header>
 const debounceHandleNextPage = useCallback(debounce(
    ()=> setPage(prevPage => prevPage + 1), 200
   ),[setPage])
@@ -34,8 +38,12 @@ if(isNearScreen) debounceHandleNextPage()
 return<>
       {loading
        ? <Spiner/>
-       :<> 
+       :<>
+           <Helmet>
+             <title>{title}</title>
+          </Helmet>
           <h3 className="App-title"> {decodeURI(keyword)}</h3>
+
           <ListOfGifs gifs={gifs}/>
        </>
       }

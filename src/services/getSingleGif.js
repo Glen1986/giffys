@@ -1,4 +1,5 @@
 import {API_URL, API_KEY} from './settings'
+
 const fromApiResponseToGifs = apiResponse => {
   const {data} = apiResponse
   const {images, id, title} = data
