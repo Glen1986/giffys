@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react"
+
 export default function useTitle ({description, title}) {
   const prevTitle = useRef(document.title)
   const prevDescription = useRef(document.querySelector('meta[name=description]'))

@@ -1,4 +1,5 @@
 import React, {useState, } from 'react'
+import { useLocation } from 'wouter'
 
 function SearchForm ({onSubmit}) {
 

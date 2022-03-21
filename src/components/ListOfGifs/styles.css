@@ -1,6 +1,6 @@
 :root{
   --results-columns: 2;
-  --repeat-columns: repeat(4, 1fr):
+  --repeat-columns: repeat(4, 1fr);
 }
 .ListOfGifs{
   margin: .5rem;
