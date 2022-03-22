@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
-//import { useLocation } from 'wouter'
+import React, {useState, } from 'react'
+import { useLocation } from 'wouter'
 
 function SearchForm ({onSubmit}) {
 
 const [keyword, setKeyword] = useState('')
-
 const handleSubmit = (evt) => {
    evt.preventDefault()
    onSubmit({keyword})
@@ -18,11 +17,8 @@ const handleChange = (evt) => {
   return(
     <>
        <form onSubmit={handleSubmit}>
-         <input type="text" value={keyword}
-                onChange={handleChange} 
-                placeholder="buscar Gifs"/>
-         <input onSubmit={handleSubmit} 
-                type="submit" value="search"/>
+        <input type="text" value={keyword} onChange={handleChange} placeholder="buscar Gifs"/>
+        <input onSubmit={handleSubmit} type="submit" value="search"/>
        </form>
     </>
   )

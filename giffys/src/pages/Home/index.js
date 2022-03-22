@@ -14,9 +14,9 @@ const {loading, gifs} = useGifs()
 //const title= 'ultima Busqueda'
 
 
-const handleSubmitSearchForm = useCallback(({keyword}) => {
+const handleSubmit = useCallback(({keyword}) => {
 	pushLocation(`/search/${keyword}`)
-//	console.log(keyword)
+	console.log(keyword)
 },[pushLocation])
 //useTitle({title})
 
@@ -27,7 +27,7 @@ return(
 		</Helmet>
 	  <div className='App'>
 	    <h3 className='App-title'>Gifs mas populares</h3>
-	    <SearchForm onSubmit = { handleSubmitSearchForm }/>
+	    <SearchForm onSubmit = { handleSubmit }/>
 	    <title>ulima Busqeda</title>
 	    <div className='Application'>
 	      <ListOfGifs gifs={gifs}/>
