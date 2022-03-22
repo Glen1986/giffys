@@ -1,10 +1,10 @@
-
 import React, {useRef, useCallback, useEffect} from 'react'
 import ListOfGifs from 'components/ListOfGifs'
 import Spiner from 'components/Spiner'
 import { useGifs } from 'hooks/useGifs';
 import useNearScreen from 'hooks/useNearScreen';
 import debounce from 'just-debounce-it';
+import useTitle from 'hooks/useTitle'
 
 export default function SearchResults({params}){
 const { keyword } = params
@@ -15,7 +15,9 @@ const {isNearScreen } = useNearScreen({
               ? null 
               : externalRef, 
           once: false})
-console.log(isNearScreen)
+const title = decodeURI(keyword)
+useTitle({title})
+console.log(title)
 //const handleNextPage = () => setPage(prevPage => prevPage + 1)
 //const handleNextPage = () => console.log('nextPage')
 

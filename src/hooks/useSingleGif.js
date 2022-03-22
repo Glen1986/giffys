@@ -13,14 +13,15 @@ export default function useSingleGif({id}){
   useEffect(()=>{
     if(!gif){
       setIsLoading(true)
-    getSingleGif({id})
+      getSingleGif({id})
     .then(gif =>{
         setGif(gif)
         setIsLoading(false)
-	setIsError(false)
+        setIsError(false)
     }).catch(err => {
+      setIsLoading(false)
       setIsError(true)
-    })
+      })
     }
   },[gif, id])
 
