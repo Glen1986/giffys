@@ -1,0 +1,45 @@
+:root{
+  --results-columns: 2;
+  --repeat-columns: repeat(4, 1fr);
+}
+.ListOfGifs{
+  margin: .5rem;
+  display: grid;
+  grid-template-columns: var(--repeat-columns);
+  grid-gap: -1rem 16px;
+  min-height: 100vh;
+}
+.ListOfGifs-item{
+  width: 100%;
+  display: inline-block;
+}
+button{
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 2rem;
+  background-color: aqua;
+}
+
+@media (min-width: 300px){
+  :root{
+    --repeat-columns: repeat(1, 1fr);
+
+  }
+}
+@media (min-width: 600px){
+  :root{
+    --repeat-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 800px){
+  :root{
+    --repeat-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1200px){
+  :root{
+    --repeat-columns: repeat(4, 1fr);
+  }
+}

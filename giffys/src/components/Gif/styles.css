@@ -1,0 +1,38 @@
+a{
+  display: flex;
+  flex-direction: column-reverse;
+  text-decoration: none;
+  color: #ccc;
+  padding: 0.5rem;
+}
+img{
+  max-width: 100%;
+  font-size: .5em;
+}
+h1{
+  font-size: 4rem;
+}
+h4{
+  font-size: 5px;
+  position: relative;
+  top: -32px;
+  right:6px;
+}
+@media (min-width: 600px){
+  img{
+    max-width: 36vw;
+    margin: 0 auto;
+  } 
+}
+@media (min-width: 800px){
+  img{
+    max-width: 18vw;
+    margin: 0 auto;
+  } 
+}
+@media (max-width: 600px){
+  img{
+    max-width: 95vw;
+    margin: 0 auto;
+  } 
+}
