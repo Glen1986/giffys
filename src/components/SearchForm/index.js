@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from 'react'
+import React, { useReducer } from 'react'
 import { useLocation } from 'wouter'
 import './style.css'
 const RATINGS = ['g', 'pg', 'pg-13', 'r' ]
@@ -20,20 +20,16 @@ case ACTIONS.UPDATE_RATING:
   return{
     ...state,
     rating: action.payload
-    }
-  default:
-return state
-}
+      }
+    default:
+  return state
+  }
 }
 
 function SearchForm ({initialRating = 'g', initialKeyword = ''}) {
 
-//const [keyword, setKeyword] = useState(decodeURIComponent(initialKeyword))
-//const [rating, setRating] = useState(initialRating)
-//const [times, setTimes] = useState(0)
-
 const [state, dispatch] = useReducer(reducer, {
-   keyword:decodeURIComponent(initialKeyword),
+   keyword: decodeURIComponent(initialKeyword),
    rating: initialRating,
    times: 0
 })
@@ -41,17 +37,11 @@ const { keyword, times, rating } = state
 
 const [_, pushLocation] =  useLocation()
 
-//const updateKeyword = keyword =>{
-//   dispatch(keyword)
-//   setKeyword(keyword)
-//   setTimes(times + 1)
-//}
+
 const handleChange = (evt) => {
  dispatch({type:ACTIONS.UPDATE_KEYWORD, payload: evt.target.value})
 }
 const handleSubmit = (evt) => {
-//   onSubmit({keyword})
-//  setTimes(times + 1)
   evt.preventDefault()
   pushLocation(`/search/${keyword}/${rating}?`)
 }
