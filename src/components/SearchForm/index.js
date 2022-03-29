@@ -1,4 +1,7 @@
 import React from 'react'
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import Select from '@material-ui/core/Select';
 import { useLocation } from 'wouter'
 import  useForm from './hooks'
 import './style.css'
@@ -35,10 +38,14 @@ const handleChangeRating = evt => {
          <input type="text" value={keyword}
                 onChange={handleChange} 
                 placeholder="buscar Gifs"/>
-         <select onChange = {handleChangeRating} value = {rating}>
-           <option disabled>Rating Type</option>
-           {RATINGS.map(rating => <option key={rating}>{rating}</option>)}
-         </select>
+         <Select
+                className='select'
+                labelId="demo-simple-select-outlined-label"
+                id="demo-simple-select-outlined"
+            onChange = {handleChangeRating} value = {rating}>
+           <MenuItem disabled>Rating Type</MenuItem>
+           {RATINGS.map(rating => (<MenuItem value={rating} key={rating}>{rating}</MenuItem>))}
+         </Select>
          <small>{times}</small>
          
        </form>
