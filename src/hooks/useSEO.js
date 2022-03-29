@@ -21,24 +21,4 @@ if(description){
   }
 return ()=> metaDescription.setAttribute('content', previousDescription)
 }, [description])
-
-/*  
-  useEffect(() => {
-    const previousTitle = prevTitle.current
-    if(title){
-    document.title = `${title} | Giffys`
-      }
-    return ()=> document.title = previousTitle
- }, [title])
-
-  useEffect(()=>{
-      const metaDescription = document.querySelector('meta[name="description"]')
-      const previousDescription = prevDescription.current
-
-    if(description){
-      metaDescription.setAtribute('content', description)
-}
-return ()=> metaDescription.setAttribute('content', previousDescription)
-}, [description])
-*/
 }
