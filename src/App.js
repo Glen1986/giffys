@@ -5,10 +5,10 @@ import Header from './components/Header'
 import Home from './pages/Home'
 import Detail from './pages/Detail'
 import SearchResults from './pages/SearchResults'
-
 import {Link, Route, Switch} from 'wouter'
+
+import {UserContextProvider} from 'context/UserContext'
 import {GifsContextProvider} from './context/GifsContext'
-import {UserContextProvider} from 'context/userConext'
 
 function App() {
 return (
