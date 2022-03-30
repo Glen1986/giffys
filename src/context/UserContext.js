@@ -20,7 +20,7 @@ return <Context.Provider value={{
          jwt,
 				 setJWT,
 				 favs,
-				 setJWT,
+				 setFavs,
 				 }}>
 				{children}
 			</Context.Provider>
