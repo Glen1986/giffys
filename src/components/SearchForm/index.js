@@ -1,51 +1,34 @@
-import React, { useState, useReducer } from 'react'
+import React from 'react'
+import MenuItem from '@material-ui/core/MenuItem';
+import Select from '@material-ui/core/Select';
 import { useLocation } from 'wouter'
+import  useForm from './hooks'
 import './style.css'
-const RATINGS = ['g', 'pg', 'pg-13', 'r' ]
 
-const reducer = (state, param) => {
-  return {
-    ...state,
-    keyword: param,
-    times: state.times + 1
-  }
-}
+const RATINGS = ['g', 'pg', 'pg-13', 'r' ]
 
 function SearchForm ({initialRating = 'g', initialKeyword = ''}) {
 
-//const [keyword, setKeyword] = useState(decodeURIComponent(initialKeyword))
-const [rating, setRating] = useState(initialRating)
-//const [times, setTimes] = useState(0)
-
-const [state, dispatch] = useReducer(reducer, {
-   keyword:decodeURIComponent(initialKeyword),
-   times: 0
-})
-const { keyword, times } = state
+const { keyword, times, rating, updateKeyword, updateRating } = useForm({
+initialKeyword,
+initialRating
+}) 
 
 const [_, pushLocation] =  useLocation()
 
-const updateKeyword = keyword =>{
-   dispatch(keyword)
-//   setKeyword(keyword)
-//   setTimes(times + 1)
-}
 const handleChange = (evt) => {
-  updateKeyword(evt.target.value)
+ updateKeyword(evt.target.value)
 }
+
 const handleSubmit = (evt) => {
-//   onSubmit({keyword})
-//  setTimes(times + 1)
   evt.preventDefault()
   pushLocation(`/search/${keyword}/${rating}?`)
 }
 
 const handleChangeRating = evt => {
-   setRating(evt.target.value)
+   updateRating(evt.target.value)
    setTimes(times + 1)
 }
-
-
   return(
     <>
        <form onSubmit={handleSubmit}>
@@ -54,10 +37,14 @@ const handleChangeRating = evt => {
          <input type="text" value={keyword}
                 onChange={handleChange} 
                 placeholder="buscar Gifs"/>
-         <select onChange = {handleChangeRating} value = {rating}>
-           <option disabled>Rating Type</option>
-           {RATINGS.map(rating => <option key={rating}>{rating}</option>)}
-         </select>
+         <Select
+                className='select'
+                labelId="demo-simple-select-outlined-label"
+                id="demo-simple-select-outlined"
+            onChange = {handleChangeRating} value = {rating}>
+           <MenuItem disabled>Rating Type</MenuItem>
+           {RATINGS.map(rating => (<MenuItem value={rating} key={rating}>{rating}</MenuItem>))}
+         </Select>
          <small>{times}</small>
          
        </form>
