@@ -8,12 +8,16 @@ import './styles.css'
 export default function Header () {
 //const isLogged = false
 
-const {isLogged} = useUser()
+const {isLogged, logout} = useUser()
 
+const handleClick = e =>{
+e.preventDefault()
+logout()
+}
 return(
     <header className="gf-header">
       {isLogged 
-       ? <Link to='/logout'>
+       ? <Link to='#' onClick={handleClick}>
            Logout
          </Link>
        : <Link to='/login'>
