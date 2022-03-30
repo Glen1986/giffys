@@ -1,3 +1,36 @@
+:root{
+  --in-heigth : 3rem;
+}
 form{
   margin: 2rem 0 4rem 0;
+  box-sizing: border-box;
+  height: var(--in-heigth);
+}
+/*button*/
+
+input:nth-child(2n  ){
+  height: var(--in-heigth);
+  margin: 2px 0;
+}
+input:nth-of-type(2n + 1){
+  border-radius: 6px 0 0 6px;
+  background-color:#571326;
+  color: #acc2c0;
+  padding: -6px;
+  height: var(--in-heigth)
+}
+/*select*/
+form > div:last-of-type{
+  background-color: #571326;
+  color: grey;
+  height: var(--in-heigth);
+  width: 60px;
+  top: -6px;
+  margin: 0;
+  padding: -3px;
+  border: 0;
+  border: groove grey;
+  border-radius: 0 6px 6px 0;
+  margin-right: 1rem;
+  box-sizing: border-box;
 }
