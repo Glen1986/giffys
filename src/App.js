@@ -9,6 +9,10 @@ import {Link, Route, Switch} from 'wouter'
 
 import {UserContextProvider} from 'context/UserContext'
 import {GifsContextProvider} from './context/GifsContext'
+<<<<<<< HEAD
+=======
+import { UserContextProvider } from 'context/UserConext'
+>>>>>>> main
 
 function App() {
 return (
