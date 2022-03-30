@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { useCallback, useContext, useState } from "react";
 import Context from 'context/UserContext'
 import loginService from 'services/login'
@@ -9,6 +8,7 @@ export default function useUser(){
   const [state, setState] = useState({ loading: false, error: false })
 
   const login = useCallback(({username, password}) => {
+console.log(state)
     setState({loading: true, error: false })
     loginService({username, password})
       .then(jwt => {
@@ -44,25 +44,5 @@ const logout = useCallback(() => {
     hasLoginError: state.error,
     login,
     logout
-=======
-import { useCallback, useContext } from 'react'
-import Context from 'context/UserConext'
-
-export default function useUser () {
-  const {jwt, setJWT} = useContext(Context)
-
-  const login = useCallback(() => {
-    setJWT('test')
-  },[setJWT])
-
-const logout = useCallback(() =>{
-  setJWT(null)
-}, [setJWT])
-
-return{
-  isLogged: Boolean(jwt),
-  login,
-  logout
->>>>>>> main
   }
 }

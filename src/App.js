@@ -8,11 +8,7 @@ import SearchResults from './pages/SearchResults'
 import {Link, Route, Switch} from 'wouter'
 
 import {UserContextProvider} from 'context/UserContext'
-import {GifsContextProvider} from './context/GifsContext'
-<<<<<<< HEAD
-=======
-import { UserContextProvider } from 'context/UserConext'
->>>>>>> main
+import {GifsContextProvider} from 'context/GifsContext'
 
 function App() {
 return (
