@@ -43,7 +43,7 @@ return<>
              <title>{title}</title>
           </Helmet>
           <h3 className="App-title"> {decodeURI(keyword)}</h3>
-          <SearchForm/>
+          <SearchForm />
 
           <ListOfGifs gifs={gifs}/>
        </>
