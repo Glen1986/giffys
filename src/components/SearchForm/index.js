@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react'
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
@@ -16,12 +17,25 @@ const handleSubmit = (evt) => {
 }
 
 
+const [_, pushLocation] =  useLocation()
+
 const handleChange = (evt) => {
-  setKeyword(evt.target.value)
+ updateKeyword(evt.target.value)
+}
+
+const handleSubmit = (evt) => {
+  evt.preventDefault()
+  pushLocation(`/search/${keyword}/${rating}?`)
+}
+
+const handleChangeRating = evt => {
+   updateRating(evt.target.value)
+   setTimes(times + 1)
 }
   return(
     <>
        <form onSubmit={handleSubmit}>
+
          <Button style={{borderRadius: '5px 0 0 5px ',
                         paddingBottom: '9px'
                         }}
@@ -44,6 +58,7 @@ const handleChange = (evt) => {
           onChange={handleChange} 
           placeholder="buscar Gifs"
 />
+
        </form>
     </>
   )

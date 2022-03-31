@@ -9,8 +9,8 @@ import SearchForm from 'components/SearchForm';
 import {Helmet} from 'react-helmet'
 
 export default function SearchResults({params}){
-const { keyword } = params
-const {loading, gifs, setPage} = useGifs({keyword})
+const { keyword, rating = 'g' } = params
+const {loading, gifs, setPage} = useGifs({keyword, rating})
 const externalRef = useRef()
 const {isNearScreen } = useNearScreen({
    externalRef: loading 
@@ -21,11 +21,7 @@ const {isNearScreen } = useNearScreen({
 const title = gifs ? `${gifs.length} resulrtados de ${decodeURI(keyword)}`: ''
 useSEO({description: decodeURI(keyword), title})
 console.log(title)
-//const handleNextPage = () => setPage(prevPage => prevPage + 1)
-//const handleNextPage = () => console.log('nextPage')
-//          <header>
-//            <SearchForm onSubmit = {handleSubmitSearchForm}/>
-//         </header>
+
 const debounceHandleNextPage = useCallback(debounce(
    ()=> setPage(prevPage => prevPage + 1), 200
   ),[setPage])
@@ -43,6 +39,7 @@ return<>
              <title>{title}</title>
           </Helmet>
           <h3 className="App-title"> {decodeURI(keyword)}</h3>
+
           <SearchForm />
 
           <ListOfGifs gifs={gifs}/>
