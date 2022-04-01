@@ -1,3 +1,4 @@
+
 import './App.css'
 import Home from './pages/Home'
 import Detail from './pages/Detail'
@@ -24,6 +25,7 @@ function App() {
             </section>
         </div>
     )
+
 }
 
 export default App

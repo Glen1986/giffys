@@ -8,6 +8,7 @@ import useSEO from 'hooks/useSEO'
 import SearchForm from 'components/SearchForm'
 import { Helmet } from 'react-helmet'
 
+
 export default function SearchResults({ params }) {
     const { keyword } = params
     const { loading, gifs, setPage } = useGifs({ keyword })
@@ -32,10 +33,12 @@ export default function SearchResults({ params }) {
         [setPage]
     )
 
+
     useEffect(() => {
         console.log(isNearScreen)
         if (isNearScreen) debounceHandleNextPage()
     }, [debounceHandleNextPage, isNearScreen])
+
 
     return (
         <>
@@ -48,6 +51,7 @@ export default function SearchResults({ params }) {
                     </Helmet>
                     <h3 className="App-title"> {decodeURI(keyword)}</h3>
                     <SearchForm />
+
 
                     <ListOfGifs gifs={gifs} />
                 </>

@@ -5,12 +5,15 @@ import { useLocation } from 'wouter'
 import './styles.css'
 
 function SearchForm() {
+  
     const [keyword, setKeyword] = useState('')
     const [, pushLocation] = useLocation()
+
 
     const handleSubmit = (evt) => {
         evt.preventDefault()
         //   onSubmit({keyword})
+
         pushLocation(`/search/${keyword}`)
     }
 
@@ -27,15 +30,18 @@ function SearchForm() {
                     }}
                     variant="contained"
                     onSubmit={handleSubmit}
+
                     type="submit"
                 >
                     Search
                 </Button>
                 <TextField
                     style={{
+
                         backgroundColor: 'white',
                         borderStyle: 'none',
                         borderRadius: '0 5px 5px 0',
+
                     }}
                     hiddenLabel
                     id="filled-hidden-label-small"
@@ -44,7 +50,9 @@ function SearchForm() {
                     size="small"
                     type="text"
                     value={keyword}
+
                     onChange={handleChange}
+
                     placeholder="buscar Gifs"
                 />
             </form>
