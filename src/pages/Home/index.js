@@ -6,32 +6,26 @@ import { Helmet } from 'react-helmet'
 import Spiner from 'components/Spiner'
 //import useTitle from 'hooks/useTitle'
 
+export default function Home() {
+    const { loading, gifs } = useGifs()
+    //const title= 'ultima Busqueda'
 
-export default function Home () {
-const {loading, gifs} = useGifs()
-//const title= 'ultima Busqueda'
-
-
-return(
-<>
-    <Helmet>
-			<title>Home | Giffy</title>
-		</Helmet>
-	  <div className='App'>
-	    <h3 className='App-title'>Gifs mas populares</h3>
-			<SearchForm/>
-	    <title>ulima Busqeda</title>
-	    <div className='Application'>
-				{
-				loading
-				? <Spiner/>
-				: <ListOfGifs gifs={gifs}/>
-				}
-				<div className='TrendinSearches'>
-					<TrendingSearches/>
-				</div>
-			</div>
-		</div>
-</>
+    return (
+        <>
+            <Helmet>
+                <title>Home | Giffy</title>
+            </Helmet>
+            <div className="App">
+                <h3 className="App-title">Gifs mas populares</h3>
+                <SearchForm />
+                <title>ulima Busqeda</title>
+                <div className="Application">
+                    {loading ? <Spiner /> : <ListOfGifs gifs={gifs} />}
+                    <div className="TrendinSearches">
+                        <TrendingSearches />
+                    </div>
+                </div>
+            </div>
+        </>
     )
 }
