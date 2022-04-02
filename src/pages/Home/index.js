@@ -8,7 +8,7 @@ import Spiner from 'components/Spiner'
 
 export default function Home() {
     const { loading, gifs } = useGifs()
-    //const title= 'ultima Busqueda'
+    const title = 'ultima Busqueda'
 
     return (
         <>
@@ -18,7 +18,7 @@ export default function Home() {
             <div className="App">
                 <h3 className="App-title">Gifs mas populares</h3>
                 <SearchForm />
-                <title>ulima Busqeda</title>
+                <title>{title}</title>
                 <div className="Application">
                     {loading ? <Spiner /> : <ListOfGifs gifs={gifs} />}
                     <div className="TrendinSearches">
