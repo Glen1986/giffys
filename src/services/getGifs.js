@@ -13,7 +13,7 @@ const fromApiResponseToGifs = (apiResponse) => {
     return []
 }
 export default function getGifs({
-    limit = 10,
+    limit = 12,
     keyword = 'weed',
     page = 0,
     rating = 'g',
