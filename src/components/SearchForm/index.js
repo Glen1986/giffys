@@ -31,11 +31,21 @@ function SearchForm({ initialKeyword = '', initialRating = 'g' }) {
     }
     return (
         <>
-            <form onSubmit={handleSubmit}>
+            <form
+                onSubmit={handleSubmit}
+                style={{
+                    height: '2.5rem',
+                    margin: '4rem',
+                    position: 'relative',
+                }}
+            >
                 <Button
                     style={{
                         borderRadius: '5px 0 0 5px ',
-                        paddingBottom: '9px',
+                        paddingBottom: '7px',
+                        height: '100%',
+                        bottom: '16px',
+                        paddingTop: '8px',
                     }}
                     variant="contained"
                     onSubmit={handleSubmit}
@@ -73,7 +83,15 @@ function SearchForm({ initialKeyword = '', initialRating = 'g' }) {
                         </MenuItem>
                     ))}
                 </Select>
-                <small>{times}</small>
+                <small
+                    style={{
+                        fontSize: '2rem',
+                        position: 'relative',
+                        bottom: '10px',
+                    }}
+                >
+                    {times}
+                </small>
             </form>
         </>
     )
